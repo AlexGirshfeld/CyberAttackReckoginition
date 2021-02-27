@@ -24,12 +24,13 @@ class FeatureVectorExtractor:
 
 
     def retriveReportFilePath(self, reportSHA256):
-        if os.path.isfile(f"malware/{reportSHA256[0:1]}/{reportSHA256[2:3]}/{reportSHA256}_sa"):
+        #print('Checking the dir:'+f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa", os.path.exists(f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/"), os.path.isfile())
+        if os.path.isfile(f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa.xml"):
             staticReportFilePath = f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa.xml"
             dynamicReportFilePath = f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_da.xml"
         else:
-            staticReportFilePath = f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa.xml"
-            dynamicReportFilePath = f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_da.xml"
+            staticReportFilePath = f"benign/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa.xml"
+            dynamicReportFilePath = f"benign/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_da.xml"
         return dynamicReportFilePath, staticReportFilePath
 
     def CheckFeatureInDynamicAndStaticReports(self, fullEntryText):
