@@ -15,8 +15,12 @@ X, Y = digits.data, digits.target
 # Data scaling
 X = (X / 16).astype(np.float32)
 
+
+
+
 # Splitting data
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
+
 
 # Training
 classifier = SupervisedDBNClassification(hidden_layers_structure=[256, 256],
