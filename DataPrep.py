@@ -46,9 +46,16 @@ def generate_full_fve_list(start, end):
 
     malware_hashes = get_samples_hash(dir_path,"malware")
     malware_fve_list = create_feature_vector_extractor_list(malware_hashes, start ,end)
+    benign_fve_list.append(malware_fve_list)
+    return benign_fve_list
 
-    return benign_fve_list.append(malware_fve_list)
+feautes = set()
+fveList = generate_full_fve_list(0,1000)
+for fve in fveList:
+    feautes.union(fve.entryKeys)
+print(len(feautes))
 
+mt = ModelTrainer(feautes)
 
 
 
