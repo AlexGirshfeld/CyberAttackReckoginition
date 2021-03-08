@@ -11,12 +11,14 @@ class FeatureVectorExtractor:
         if os.path.exists(staticReportFilePath):
             self.staticTree = ET.parse(staticReportFilePath)
         else:
-            self.staticTree = ""
+            self.staticTree = None
         if os.path.exists(dynamicReportFilePath):
             self.dynamicTree = ET.parse(dynamicReportFilePath)
         else:
-            self.dynamicTree = ""
+            self.dynamicTree = None
         self.featureVectorKeys = FeatureVectorList
+
+
 
     def ExtractLabel(self):
         root = self.staticTree.getroot()
@@ -32,16 +34,19 @@ class FeatureVectorExtractor:
     def ExtractEntriesKeys(self):
 
         #get static entries first
-        static_root = self.staticTree.getroot()
-        entries = static_root.findall(".//entry")
-        self.entry_keys = self.convertEntriesToStringList(entries)
+        if self.staticTree != None:
+            static_root = self.staticTree.getroot()
+            entries = static_root.findall(".//entry")
+            self.entry_keys = self.convertEntriesToStringList(entries)
 
-        #get dynamic entries
-        if self.dynamicTree is not "":
-            dynamic_root = self.dynamicTree.getroot()
-            entries = dynamic_root.findall(".//entry")
-            dynamic_entries = self.convertEntriesToStringList(entries)
-            self.entry_keys.append(dynamic_entries)
+            #get dynamic entries
+            if self.dynamicTree != None:
+                dynamic_root = self.dynamicTree.getroot()
+                entries = dynamic_root.findall(".//entry")
+                dynamic_entries = self.convertEntriesToStringList(entries)
+                self.entry_keys.append(dynamic_entries)
+        else:
+            raise Exception("No static file was found for this hash or static file may be currapted")
 
 
 
