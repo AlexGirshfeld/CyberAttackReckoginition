@@ -44,7 +44,7 @@ class FeatureVectorExtractor:
                 dynamic_root = self.dynamicTree.getroot()
                 entries = dynamic_root.findall(".//entry")
                 dynamic_entries = self.convertEntriesToStringList(entries)
-                self.entry_keys.append(dynamic_entries)
+                self.entry_keys.extend(dynamic_entries)
         else:
             raise Exception("No static file was found for this hash or static file may be currapted")
 
