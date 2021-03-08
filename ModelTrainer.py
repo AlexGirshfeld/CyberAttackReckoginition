@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from chefboost import Chefboost as chef
-import FeatureVectorExtractor
+from FeatureVectorExtractor import FeatureVectorExtractor
 import ConfigFile
 
 class ModelTrainer:

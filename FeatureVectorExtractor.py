@@ -8,14 +8,8 @@ class FeatureVectorExtractor:
     def __init__(self, reportSHA256, FeatureVectorList):
         dynamicReportFilePath, staticReportFilePath = self.retriveReportFilePath(reportSHA256)
         self.hash = reportSHA256
-        if os.path.exists(staticReportFilePath):
-            self.staticTree = ET.parse(staticReportFilePath)
-        else:
-            self.staticTree = None
-        if os.path.exists(dynamicReportFilePath):
-            self.dynamicTree = ET.parse(dynamicReportFilePath)
-        else:
-            self.dynamicTree = None
+        self.staticTree = ET.parse(staticReportFilePath)
+        self.dynamicTree = ET.parse(dynamicReportFilePath)
         self.featureVectorKeys = FeatureVectorList
 
 
@@ -81,6 +75,7 @@ class FeatureVectorExtractor:
         return self.checkEntryInTree(EntryText, self.staticTree.getroot())
 
     def checkEntryInTree(self, EntryText, root):
+
         entries = root.findall(".//entry")
         stringList = self.convertEntriesToStringList(entries)
         return EntryText in stringList

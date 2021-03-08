@@ -2,7 +2,7 @@ import os
 import numpy as np
 import ConfigFile
 from FeatureVectorExtractor import FeatureVectorExtractor
-import ModelTrainer
+from ModelTrainer import ModelTrainer
 import pickle
 #prep data:
 #testSHA256 = '0000eaf36c9d3217bfe5b89e027f86fd2de80bf541df1cabb337149ebdf5f415'
@@ -60,8 +60,8 @@ for fve in fveList:
 features = list(dict.fromkeys(allFeatures))
 print(len(features))
 
-#mt = ModelTrainer(hashList, features)
-#print(mt.createDataFrame(hashList, features))
+mt = ModelTrainer(hashList, features)
+print(mt.createDataFrame(hashList, features))
 
 
 
