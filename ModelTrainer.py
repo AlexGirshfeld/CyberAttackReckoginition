@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 from chefboost import Chefboost as chef
-from output.FeatureVectorExtractor import FeatureVectorExtractor
+import FeatureVectorExtractor
+import ConfigFile
 
 class ModelTrainer:
     def __init__(self, apkList,features):
@@ -16,7 +17,7 @@ class ModelTrainer:
             except FileNotFoundError:
                 continue
             featureVectorDict = fve.ExtractFeatureVector()
-            featureVectorDict['Decision'] = fve.ExtractLabel()
+            featureVectorDict[ConfigFile.Decision] = fve.ExtractLabel()
             dataDicts.append(featureVectorDict)
         featureVectorsArray = np.array([list(vector.values()) for vector in dataDicts])
         returndf = pd.DataFrame(featureVectorsArray, columns = dataDicts[0].keys())
@@ -36,9 +37,6 @@ class ModelTrainer:
 
 
 
-
-
-
 def test_CreateDataFrame():
     testSHA256List = ['0000eaf36c9d3217bfe5b89e027f86fd2de80bf541df1cabb337149ebdf5f415','0b0a3531cfa5f207b701e51656b8941241a9e8ed40dde4a5979e16e9cb6a8b0f']
     testFeatureVectorParams = {'APK file calls sensitive API methods', 'APK file removed the app icon', 'com.mopub.izdirLdedbezvC'}
@@ -49,7 +47,7 @@ def test_CreateDataFrame():
         except FileNotFoundError:
             continue
         featureVectorDict = FeatureVectorExtractorMock.ExtractFeatureVector()
-        featureVectorDict['Decision'] = FeatureVectorExtractorMock.ExtractLabel()
+        featureVectorDict[ConfigFile.Decision] = FeatureVectorExtractorMock.ExtractLabel()
         dataDicts.append(featureVectorDict)
     featureVectorsArray = np.array([list(vector.values()) for vector in dataDicts])
     manualdf = pd.DataFrame(featureVectorsArray, columns = dataDicts[0].keys())

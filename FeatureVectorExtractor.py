@@ -1,19 +1,25 @@
 import os
 import xml.etree.ElementTree as ET
-import pytest
+import ConfigFile
 
 
 
 class FeatureVectorExtractor:
     def __init__(self, reportSHA256, FeatureVectorList):
         dynamicReportFilePath, staticReportFilePath = self.retriveReportFilePath(reportSHA256)
-        self.staticTree = ET.parse(staticReportFilePath)
-        self.dynamicTree = ET.parse(dynamicReportFilePath)
+        if os.path.exists(staticReportFilePath):
+            self.staticTree = ET.parse(staticReportFilePath)
+        else:
+            self.staticTree = ""
+        if os.path.exists(dynamicReportFilePath):
+            self.dynamicTree = ET.parse(dynamicReportFilePath)
+        else:
+            self.dynamicTree = ""
         self.featureVectorKeys = FeatureVectorList
 
     def ExtractLabel(self):
-        sroot = self.staticTree.getroot()
-        malwareTag = sroot.findall('./malware')
+        root = self.staticTree.getroot()
+        malwareTag = root.findall(ConfigFile.Malware_tag)
         return malwareTag[0].text
 
     def ExtractFeatureVector(self):
@@ -22,15 +28,36 @@ class FeatureVectorExtractor:
             featureVector[key] = self.CheckFeatureInDynamicAndStaticReports(key)
         return featureVector
 
+    def ExtractEntriesKeys(self):
+
+        #get static entries first
+        static_root = self.staticTree.getroot()
+        entries = static_root.findall(".//entry")
+        self.entry_keys = self.convertEntriesToStringList(entries)
+
+        #get dynamic entries
+        if self.dynamicTree is not "":
+            dynamic_root = self.dynamicTree.getroot()
+            entries = dynamic_root.findall(".//entry")
+            dynamic_entries = self.convertEntriesToStringList(entries)
+            self.entry_keys.append(dynamic_entries)
+
+
+
+
 
     def retriveReportFilePath(self, reportSHA256):
         #print('Checking the dir:'+f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa", os.path.exists(f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/"), os.path.isfile())
-        if os.path.isfile(f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa.xml"):
-            staticReportFilePath = f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa.xml"
-            dynamicReportFilePath = f"malware/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_da.xml"
+
+        #malware
+        mal_static_path  = f"{ConfigFile.Malware_dir}{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa.xml"
+        if os.path.isfile(mal_static_path):
+            staticReportFilePath = mal_static_path
+            dynamicReportFilePath = f"{ConfigFile.Malware_dir}{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_da.xml"
         else:
-            staticReportFilePath = f"benign/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa.xml"
-            dynamicReportFilePath = f"benign/{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_da.xml"
+            #benign
+            staticReportFilePath = f"{ConfigFile.Benign_dir}{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_sa.xml"
+            dynamicReportFilePath = f"{ConfigFile.Benign_dir}{reportSHA256[0:2]}/{reportSHA256[2:4]}/{reportSHA256}_da.xml"
         return dynamicReportFilePath, staticReportFilePath
 
     def CheckFeatureInDynamicAndStaticReports(self, fullEntryText):
@@ -57,6 +84,7 @@ class FeatureVectorExtractor:
         for e in entries:
             stringList.append(e.text)
         return stringList
+
 
 def test_ExtractLabel():
     testSHA256 = '0000eaf36c9d3217bfe5b89e027f86fd2de80bf541df1cabb337149ebdf5f415'
