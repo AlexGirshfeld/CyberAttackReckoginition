@@ -7,6 +7,7 @@ import ConfigFile
 class FeatureVectorExtractor:
     def __init__(self, reportSHA256, FeatureVectorList):
         dynamicReportFilePath, staticReportFilePath = self.retriveReportFilePath(reportSHA256)
+        self.hash = reportSHA256
         if os.path.exists(staticReportFilePath):
             self.staticTree = ET.parse(staticReportFilePath)
         else:
