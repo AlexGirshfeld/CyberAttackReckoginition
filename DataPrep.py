@@ -31,19 +31,20 @@ def create_feature_vector_extractor_list(file_hashes, start, end):
         try:
             fve  = FeatureVectorExtractor(hash,[])
             fve.ExtractEntriesKeys()
+            fve_list.append(fve)
         except:
-            print("enter {hash} into blacklist")
-        fve_list.append(fve)
+            print(f"enter {hash} into blacklist")
     return fve_list
 
 #create feature vector extractor list from file samples
-path = r"C:\Users\nofar\Documents\לימודים\תואר 2\זיהוי התקפות סייבר\פרוייקט גמר"
-benign_hashes = get_samples_hash(path,"benign")
+dir_path = os.path.dirname(os.path.realpath(__file__))
+os.chdir(dir_path)
+benign_hashes = get_samples_hash(dir_path,"benign")
 benign_fve_list = create_feature_vector_extractor_list(benign_hashes,0,1000)
 
-malware_hashes = get_samples_hash(path,"malware")
+malware_hashes = get_samples_hash(dir_path,"malware")
 malware_fve_list = create_feature_vector_extractor_list(benign_hashes,0,1000)
-print(5)
+
 
 
 
