@@ -1,0 +1,423 @@
+android.permission.INTERNET
+android.intent.action.MAIN
+android.permission.ACCESS_NETWORK_STATE
+APK file uses system-level passive monitoring
+APK file matches a known malware family behavioral profile
+android.permission.WRITE_EXTERNAL_STORAGE
+APK file uses the Java Reflection API
+APK file calls sensitive API methods
+android/net/ConnectivityManager;->getActiveNetworkInfo
+java/net/URL;->openConnection
+android/webkit/WebView;-><init>
+APK file communicates over a network socket
+APK file source code contains a hard-coded URL
+android.intent.action.BOOT_COMPLETED
+APK file listens for boot-completed events
+java/net/HttpURLConnection;->connect
+android.net.conn.CONNECTIVITY_CHANGE
+APK file has the ability to install other APK files
+APK file contains source code with dangerous shell commands
+android.permission.READ_PHONE_STATE
+android.permission.ACCESS_WIFI_STATE
+APK file connected to a URL
+android.permission.WAKE_LOCK
+APK file is obfuscated
+APK file requires permissions that should not be claimed by third-party apps
+APK file accessed device specific information
+android/content/pm/PackageManager;->setComponentEnabledSetting
+APK file collects information about running tasks
+android/app/DownloadManager;->enqueue
+android.permission.GET_TASKS
+android/os/PowerManager$WakeLock;->acquire
+android/os/PowerManager$WakeLock;->release
+Receive sensor readings from gps
+APK file is a trusted Google Play app
+android.permission.VIBRATE
+android.net.wifi.STATE_CHANGE
+APK file contains a native executable 
+android/app/NotificationManager;->notify
+APK file collects information about installed apps
+APK file accesses a virtual machine indicator
+APK file executes privileged shell commands
+APK file is available from Google Play
+android/net/ConnectivityManager;->getNetworkInfo
+com.android.launcher.permission.INSTALL_SHORTCUT
+android/media/MediaPlayer;->start
+android.permission.RECEIVE_BOOT_COMPLETED
+android.permission.ACCESS_COARSE_LOCATION
+APK file executes shell commands
+java/lang/Runtime;->exec
+APK file attempts to terminate external processes
+android.permission.ACCESS_FINE_LOCATION
+android/media/MediaPlayer;->release
+APK file loaded a sensitive file type
+android/telephony/TelephonyManager;->getDeviceId
+android.net.wifi.WIFI_STATE_CHANGED
+android/app/ActivityManager;->getRunningTasks
+android/media/MediaPlayer;->stop
+android/media/MediaPlayer;->pause
+android/net/wifi/WifiManager;->getConnectionInfo
+APK file embeds native code
+android.intent.action.VIEW
+Connected to a malicious domain
+APK file is signed by a trusted certificate
+android.permission.GET_ACCOUNTS
+APK file includes third-party libraries
+APK file loads classes dynamically
+APK file removed the app icon
+android.permission.WRITE_SETTINGS
+org/apache/http/impl/client/DefaultHttpClient;->execute
+android.net.wifi.supplicant.CONNECTION_CHANGE
+android.permission.SYSTEM_ALERT_WINDOW
+android.intent.action.ACTION_SHUTDOWN
+android.permission.CHANGE_WIFI_STATE
+APK file created or saved an APK or DEX file
+APK file monitors screen focus
+android/location/LocationManager;->getLastKnownLocation
+APK file sent device information to a remote website
+android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+APK file registers a broadcast receiver with a high priority
+android.permission.READ_EXTERNAL_STORAGE
+java/net/URLConnection;->getInputStream
+com.android.launcher.permission.READ_SETTINGS
+APK file uses device sensors
+APK file performed crypto operations
+android.intent.action.REBOOT
+android.intent.action.QUICKBOOT_POWEROFF
+APK file created or accessed a hidden folder within the application folder
+android.permission.CHANGE_NETWORK_STATE
+APK file contains a file with an incorrect extension
+android/location/LocationManager;->isProviderEnabled
+java/net/URL;->openStream
+com.android.vending.INSTALL_REFERRER
+android.permission.READ_SMS
+android/media/MediaPlayer;->reset
+android.intent.action.USER_PRESENT
+android/os/Vibrator;->vibrate
+android.permission.RECEIVE_SMS
+android.permission.CAMERA
+Receive sensor readings from camera
+android.permission.CALL_PHONE
+android/location/LocationManager;->requestLocationUpdates
+android.permission.CHANGE_CONFIGURATION
+android/telephony/TelephonyManager;->getSubscriberId
+APK file has the ability to uninstall other APK files
+com.google.android.c2dm.permission.RECEIVE
+APK file listens for USB connection events
+Android SDK Support (Generic Library)
+com.google.android.c2dm.intent.RECEIVE
+APK file queries location information
+android.permission.SEND_SMS
+APK file contains another APK file
+com.pay.sdk.msg.PayListenerService
+android.permission.READ_CONTACTS
+APK file collects device-specific information
+com.pay.sdk.msg.PayService
+APK file references system files
+android/telephony/TelephonyManager;->getLine1Number
+android/net/wifi/WifiManager;->isWifiEnabled
+android.intent.action.PACKAGE_ADDED
+android.intent.action.ACTION_POWER_CONNECTED
+com.google.android.gms.ads.AdActivity
+android/telephony/TelephonyManager;->listen
+APK file registers an SMS receiver
+android.provider.Telephony.SMS_RECEIVED
+android/net/ConnectivityManager;->getAllNetworkInfo
+android/widget/VideoView;->start
+android.permission.WRITE_SMS
+APK file listens for changes in phone status
+android/media/AudioManager;->isWiredHeadsetOn
+android.permission.BROADCAST_STICKY
+android/telephony/TelephonyManager;->getCellLocation
+android/net/ConnectivityManager;->isActiveNetworkMetered
+android/accounts/AccountManager;->getAccountsByType
+java/net/URLConnection;->connect
+com.google.android.c2dm.permission.SEND
+android.appwidget.action.APPWIDGET_UPDATE
+android.intent.action.PACKAGE_REMOVED
+android/net/wifi/WifiManager;->getScanResults
+Google Play Service (Third Party SDK)
+com.google.android.gms.common.api.GoogleApiActivity
+APK file contains a JavaScript file
+android.permission.RECORD_AUDIO
+Receive sensor readings from microphone
+Receive sensor readings from bluetooth
+android.permission.BLUETOOTH
+android/hardware/Camera;->open
+APK file contains a DEX file
+android.intent.action.SEND
+android.permission.RECEIVE_MMS
+android/accounts/AccountManager;->invalidateAuthToken
+android/widget/VideoView;->pause
+com.google.android.c2dm.intent.REGISTRATION
+android.permission.BROADCAST_SMS
+android.permission.INTERACT_ACROSS_USERS_FULL
+android/widget/VideoView;->stopPlayback
+android.permission.WRITE_APN_SETTINGS
+APK file deleted executable files
+android/location/LocationManager;->getBestProvider
+android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
+android.intent.action.SCREEN_ON
+android.provider.Telephony.SMS_DELIVER
+android/accounts/AccountManager;->getAccounts
+android/widget/VideoView;->setVideoURI
+APK file connected to a known malicious URL
+android.permission.READ_SETTINGS
+APK file is signed by a malicious certificate
+android.bluetooth.adapter.action.STATE_CHANGED
+android.intent.action.PACKAGE_REPLACED
+android.intent.action.SIM_STATE_CHANGED
+APK file checks whether USB debugging is enabled
+android.permission.WRITE_SECURE_SETTINGS
+APK file dynamically registered SMS receivers with a high priority
+APK file received and read incoming  SMS message
+android.permission.READ_USER_DICTIONARY
+android.permission.RECEIVE_WAP_PUSH
+com.android.launcher.permission.UNINSTALL_SHORTCUT
+android.intent.action.ANY_DATA_STATE
+android/net/wifi/WifiManager;->setWifiEnabled
+APK file uses a custom packer
+android/net/wifi/WifiManager;->startScan
+Facebook (Third Party SDK)
+android.intent.action.BATTERY_CHANGED
+android.intent.action.SERVICE_STATE
+android/bluetooth/BluetoothAdapter;->isEnabled
+android.permission.WRITE_INTERNAL_STORAGE
+android.permission.ACCESS_MTK_MMHW
+android.permission.BLUETOOTH_ADMIN
+android.permission.UPDATE_APP_OPS_STATS
+android.intent.action.NOTIFICATION_ADD
+android.permission.SAMSUNG_TUNTAP
+android.intent.action.NOTIFICATION_UPDATE
+android.permission.READ_INTERNAL_STORAGE
+android.intent.action.NOTIFICATION_REMOVE
+com.alipay.android.app.sdk.WapPayActivity
+com.pz.test.TestReceive
+com.test.MActivity
+com.emag.yapz.service.DHYZService
+com.emag.yapz.ph.game.syd.chjieservice
+com.test.pz.op.DrdSrvi
+com.wyzf.service.InitService
+com.emag.yapz.receiver.ZPayReceiver2
+com.ast.sdk.receiver.ReceiverM
+com.emag.yapz.receiver.BootReceiver
+GET_SMS_ACTION
+com.test.URFJ
+com.door.pay.sdk.DnPayActivity
+com.ast.sdk.server.ServerM
+com.emag.yapz.ph.game.syd.rtBtBtReceiver
+com.b.ht.JAA
+android.permission.ACCESS_CACHE_FILESYSTEM
+com.android.mtools.MPService
+com.door.pay.sdk.sms.SmsReceiver
+com.b.ht.JDR
+com.door.pay.sdk.sms.SmsService
+com.android.mtools.MyReceiver
+android.intent.action.D2_INCLUDE
+android.intent.action.DATA_CHANGED
+android.intent.action.DEAD_INCLUDE
+APK file contains another known malicious APK file
+"APK file contains an ELF, DEX, or APK file with an incorrect extension"
+top.cure.sev
+top.cure.rece
+SEND_SMS_ACTION1
+SEND_SMS_ACTION2
+com.diamondsks.jaaakfd.com.mo.action.ACTION
+com.b.ht.FJA
+com.b.ht.IDD
+com.cy.pay.TiantianSMPay
+com.cy.pay.TiantianGzhPay
+com.dyl.p.action
+android.intent.action.AD_INCLUDE
+com.door.pay.sdk.app.action
+com.mj.jar.pay.InSmsReceiver
+com.mj.jar.pay.SmsServices
+com.cy.smspay.HJActivity
+com.mj.sms.service.InitService
+com.example.dnpaydemo.com.door.pay.sdk.DnPayActivity
+android/telephony/TelephonyManager;->getSimSerialNumber
+com.android.vending.BILLING
+com.google.android.providers.gsf.permission.READ_GSERVICES
+android/accounts/AccountManager;->getAuthToken
+com.e4a.runtime.android.StartActivity
+com.e4a.runtime.android.mainActivity
+android.permission.READ_LOGS
+APK file calls a Java method from JavaScript
+android/media/AudioRecord;-><init>
+Google Ads (Advertisement Library)
+com.facebook.FacebookActivity
+android.permission.MODIFY_AUDIO_SETTINGS
+android/widget/VideoView;->setVideoPath
+com.google.android.gms.measurement.AppMeasurementService
+android/net/wifi/WifiManager;->getWifiState
+APK file called a sensitive system service or command
+com.google.android.gms.measurement.AppMeasurementReceiver
+android.permission.KILL_BACKGROUND_PROCESSES
+android.permission.FLASHLIGHT
+android.intent.action.SEARCH
+android.permission.USE_CREDENTIALS
+APK file source code contains a hard-coded phone number
+APK file created database observer to monitor SMS updates
+com.google.firebase.iid.FirebaseInstanceIdReceiver
+android.permission.WRITE_SYNC_SETTINGS
+android.permission.BIND_JOB_SERVICE
+com.google.firebase.INSTANCE_ID_EVENT
+com.google.firebase.iid.FirebaseInstanceIdService
+android.permission.MANAGE_ACCOUNTS
+APK file description includes SMS-related features
+android.permission.WRITE_CONTACTS
+android.permission.READ_SYNC_SETTINGS
+android/location/LocationManager;->getProviders
+org.cocos2dx.cpp.VideoPlayer
+com.google.android.gms.ads.purchase.InAppPurchaseActivity
+APK file disables app components at runtime
+android/provider/Settings$System;->putInt
+android.permission.INSTALL_PACKAGES
+android/provider/Settings$System;->putString
+android/telephony/SmsManager;->sendTextMessage
+APK file scans external storage
+APK file wrote a known malicious file to the device
+com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+APK file sent out an SMS message
+android/telephony/TelephonyManager;->getNeighboringCellInfo
+android/net/wifi/WifiManager$WifiLock;->release
+android/net/wifi/WifiManager$WifiLock;->acquire
+android.permission.DISABLE_KEYGUARD
+APK file posted a notification
+android.permission.RESTART_PACKAGES
+android/os/Vibrator;->cancel
+android.permission.READ_CALL_LOG
+Google GSON (Generic Library)
+android.permission.EXPAND_STATUS_BAR
+com.tapjoy.mraid.view.Browser
+com.tapjoy.mraid.view.ActionHandler
+android.intent.action.LOCALE_CHANGED
+com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+android.permission.AUTHENTICATE_ACCOUNTS
+android/app/ActivityManager;->killBackgroundProcesses
+android.intent.action.MY_PACKAGE_REPLACED
+com.google.android.gms.auth.api.signin.RevocationBoundService
+android.intent.action.PHONE_STATE
+android.intent.action.SEND_MULTIPLE
+android.permission.GET_PACKAGE_SIZE
+APK file probed if the phone is rooted
+android.permission.SET_WALLPAPER
+android/app/ActivityManager;->getRecentTasks
+APK file intercepted incoming SMS messages
+APK file read log messages of system and installed apps
+android.intent.action.CREATE_SHORTCUT
+com.facebook.ads.AudienceNetworkActivity
+android.intent.action.ACTION_POWER_DISCONNECTED
+com.facebook.CustomTabMainActivity
+APK file accesses the device's call history and makes phone calls
+android.accounts.AccountAuthenticator
+android/media/MediaRecorder;->setAudioSource
+android.permission.PROCESS_OUTGOING_CALLS
+com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+android/net/wifi/WifiManager;->getConfiguredNetworks
+APK file receives and reads incoming SMS messages
+android/accounts/AccountManager;->addAccountExplicitly
+android/bluetooth/BluetoothAdapter;->enable
+android/media/RingtoneManager;->getRingtone
+android/bluetooth/BluetoothAdapter;->getAddress
+APK file registers a high-priority SMS receiver
+com.android.browser.permission.READ_HISTORY_BOOKMARKS
+android.content.SyncAdapter
+APK file is repackaged or generated with non-standard tools
+com.facebook.ads.InterstitialAdActivity
+com.google.android.gms.measurement.AppMeasurementJobService
+android/bluetooth/BluetoothAdapter;->disable
+android.accessibilityservice.AccessibilityService
+android/bluetooth/BluetoothDevice;->getName
+android/telephony/SmsManager;->sendMultipartTextMessage
+android/content/ContentResolver;->getMasterSyncAutomatically
+java/net/ServerSocket;-><init>
+com.htc.launcher.permission.READ_SETTINGS
+android/media/AudioManager;->setSpeakerphoneOn
+android/bluetooth/BluetoothAdapter;->getState
+com.flurry.android.FlurryFullscreenTakeoverActivity
+android.permission.READ_PROFILE
+android/media/AudioManager;->setMode
+android.intent.action.MEDIA_MOUNTED
+com.tencent.tauth.AuthActivity
+android/content/ContentResolver;->setSyncAutomatically
+android.intent.action.EDIT
+com.google.firebase.messaging.FirebaseMessagingService
+com.google.firebase.MESSAGING_EVENT
+com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION
+android/location/LocationManager;->getProvider
+com.applovin.adview.AppLovinInterstitialActivity
+android/provider/Settings$System;->getUriFor
+android.permission.BIND_ACCESSIBILITY_SERVICE
+Flurry (Advertisement Library)
+APK file registers as a device administrator
+android.app.action.DEVICE_ADMIN_ENABLED
+com.amazon.device.ads.AdActivity
+android.permission.NFC
+android.permission.READ_CALENDAR
+Receive sensor readings from nfc
+com.appsflyer.MultipleInstallBroadcastReceiver
+com.tencent.connect.common.AssistActivity
+APK file is signed by a compromised certificate
+java/net/ServerSocket;->bind
+android/media/RingtoneManager;->setActualDefaultRingtoneUri
+android/accounts/AccountManager;->removeAccount
+android/app/ActivityManager;->restartPackage
+com.google.android.gms.iid.InstanceID
+android.intent.action.WEB_SEARCH
+com.mopub.common.MoPubBrowser
+APK file hijacks screen focus
+com.mopub.mobileads.MraidVideoPlayerActivity
+android/net/wifi/WifiManager;->getDhcpInfo
+android/content/ContentResolver;->setIsSyncable
+com.google.android.gms.analytics.CampaignTrackingService
+com.mopub.mobileads.MoPubActivity
+com.mopub.mobileads.MraidActivity
+com.google.android.gms.gcm.ACTION_TASK_READY
+android.appwidget.action.APPWIDGET_CONFIGURE
+Apache Common (Generic Library)
+com.android.launcher.permission.WRITE_SETTINGS
+android.intent.action.MEDIA_BUTTON
+android/location/LocationManager;->requestSingleUpdate
+android.permission.BIND_DEVICE_ADMIN
+android/net/wifi/WifiManager;->enableNetwork
+android/location/LocationManager;->addGpsStatusListener
+android.intent.action.NEW_OUTGOING_CALL
+com.facebook.LoginActivity
+android.intent.action.SENDTO
+android.permission.WRITE_CALL_LOG
+android/net/wifi/WifiManager;->addNetwork
+android.permission.CLEAR_APP_CACHE
+android.permission.READ_SYNC_STATS
+android.permission.CHANGE_WIFI_MULTICAST_STATE
+com.google.android.gms.analytics.AnalyticsService
+APK file is signed by an unexpected certificate
+com.sec.android.provider.badge.permission.READ
+com.sec.android.provider.badge.permission.WRITE
+android.permission.WRITE_CALENDAR
+APK file sent location information to a remote website
+Android Universal Image Loader (Generic Library)
+APK file records video
+com.google.android.gms.analytics.AnalyticsReceiver
+APK file records audio
+android/content/ContentResolver;->setMasterSyncAutomatically
+android.intent.action.TIME_SET
+com.sec.spp.push.receiver.ForceUpdateAlarmReceiver
+android/app/WallpaperManager;->setStream
+com.android.browser.permission.WRITE_HISTORY_BOOKMARKS
+APK file queries SMS contents
+APK file traverses all SMS messages in the inbox
+com.sonyericsson.home.permission.BROADCAST_BADGE
+com.google.android.gms.gcm.GcmReceiver
+APK file is defective and could not be installed
+com.revmob.FullscreenActivity
+com.huawei.android.launcher.permission.READ_SETTINGS
+com.millennialmedia.android.MMActivity
+android/view/View;->startDrag
+java/net/URL;->getContent
+android.permission.PACKAGE_USAGE_STATS
+android/net/wifi/WifiManager;->removeNetwork
+android.service.notification.NotificationListenerService
+com.android.alarm.permission.SET_ALARM
+com.google.ads.AdActivity
+android.intent.action.PACKAGE_INSTALL
