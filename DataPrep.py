@@ -36,14 +36,18 @@ def create_feature_vector_extractor_list(file_hashes, start, end):
             print(f"enter {hash} into blacklist")
     return fve_list
 
-#create feature vector extractor list from file samples
-dir_path = os.path.dirname(os.path.realpath(__file__))
-os.chdir(dir_path)
-benign_hashes = get_samples_hash(dir_path,"benign")
-benign_fve_list = create_feature_vector_extractor_list(benign_hashes,0,1000)
+def generate_full_fve_list(start, end):
 
-malware_hashes = get_samples_hash(dir_path,"malware")
-malware_fve_list = create_feature_vector_extractor_list(benign_hashes,0,1000)
+    #create feature vector extractor list from file samples
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    os.chdir(dir_path)
+    benign_hashes = get_samples_hash(dir_path,"benign")
+    benign_fve_list = create_feature_vector_extractor_list(benign_hashes, start ,end)
+
+    malware_hashes = get_samples_hash(dir_path,"malware")
+    malware_fve_list = create_feature_vector_extractor_list(malware_hashes, start ,end)
+
+    return benign_fve_list.append(malware_fve_list)
 
 
 
