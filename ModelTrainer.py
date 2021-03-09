@@ -4,6 +4,7 @@ from chefboost import Chefboost as chef
 from FeatureVectorExtractor import FeatureVectorExtractor
 import ConfigFile
 
+
 class ModelTrainer:
     def __init__(self, apkList,features):
         self.SHA256List = apkList
@@ -14,11 +15,11 @@ class ModelTrainer:
         for apk in SHA256List:
             try:
                 fve = FeatureVectorExtractor(apk, featureVectorParams)
-            except FileNotFoundError:
+                featureVectorDict = fve.ExtractFeatureVector()
+                featureVectorDict[ConfigFile.Decision] = fve.ExtractLabel()
+                dataDicts.append(featureVectorDict)
+            except Exception:
                 continue
-            featureVectorDict = fve.ExtractFeatureVector()
-            featureVectorDict[ConfigFile.Decision] = fve.ExtractLabel()
-            dataDicts.append(featureVectorDict)
         featureVectorsArray = np.array([list(vector.values()) for vector in dataDicts])
         returndf = pd.DataFrame(featureVectorsArray, columns = dataDicts[0].keys())
         return returndf
