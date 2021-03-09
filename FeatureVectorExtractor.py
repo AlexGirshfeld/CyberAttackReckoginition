@@ -1,8 +1,22 @@
 import os
 import xml.etree.ElementTree as ET
 import ConfigFile
+import json
+import random
+
+def findRandomAPK():
+    coin = random.random()
+    with open('malware_samples.json') as f:
+        maldata = json.load(f)
+    with open('benign_samples.json') as f:
+        bendata = json.load(f)
+    if coin > 0.5:
+        d = maldata[random.randint(0, len(maldata))]
+    else:
+        d = bendata[random.randint(0, len(bendata))]
 
 
+    return d['sha256']
 
 class FeatureVectorExtractor:
     def __init__(self, reportSHA256, FeatureVectorList):
@@ -25,8 +39,16 @@ class FeatureVectorExtractor:
             featureVector[key] = self.CheckFeatureInDynamicAndStaticReports(key)
         return featureVector
 
-    def ExtractEntriesKeys(self):
+    def ExtractBinFeatureVector(self):
+        fv = self.ExtractFeatureVector()
+        for key in fv.key():
+            if fv[key] == True:
+                fv[key] = 1
+            if fv[key] == False:
+                fv[key] = 0
+        return fv
 
+    def ExtractEntriesKeys(self):
         #get static entries first
         if self.staticTree != None:
             static_root = self.staticTree.getroot()
@@ -134,3 +156,5 @@ def test_CheckFeatureInDynamicAndStaticReports():
 
 
 
+def test_findRandomApk():
+    apk = findRandomAPK()
