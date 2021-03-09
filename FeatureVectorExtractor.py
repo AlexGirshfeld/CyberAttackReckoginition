@@ -14,8 +14,6 @@ def findRandomAPK():
         d = maldata[random.randint(0, len(maldata))]
     else:
         d = bendata[random.randint(0, len(bendata))]
-
-
     return d['sha256']
 
 class FeatureVectorExtractor:
@@ -41,7 +39,7 @@ class FeatureVectorExtractor:
 
     def ExtractBinFeatureVector(self):
         fv = self.ExtractFeatureVector()
-        for key in fv.key():
+        for key in fv.keys():
             if fv[key] == True:
                 fv[key] = 1
             if fv[key] == False:
